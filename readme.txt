@@ -2,9 +2,9 @@
 Contributors: hubert
 Tags: dashboard, admin, wpml, acf, custom-post-type
 Requires at least: 6.0
-Tested up to: 7.0.4
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 License: Proprietary
 
 Hubert 製 WordPress サイト用、管理画面ダッシュボードの統一化プラグイン。
@@ -47,6 +47,9 @@ MW WP Form の問い合わせデータ(`mwf_*`)と Flamingo(Contact Form 7、`fl
 * `hubert_acf_show_admin` - ACF 管理メニューの表示判定
 
 == Changelog ==
+
+= 1.7.3 =
+* 自己更新(GitHub Releases 経由)の動作検証リリース。機能変更なし。動作確認バージョンを WordPress 7.1 に更新
 
 = 1.7.2 =
 * 自己更新機能を追加(GitHub Releases + plugin-update-checker v5.7)
