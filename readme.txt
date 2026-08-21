@@ -4,7 +4,7 @@ Tags: dashboard, admin, wpml, acf, custom-post-type
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.7.3
+Stable tag: 1.7.4
 License: Proprietary
 
 Hubert 製 WordPress サイト用、管理画面ダッシュボードの統一化プラグイン。
@@ -47,6 +47,11 @@ MW WP Form の問い合わせデータ(`mwf_*`)と Flamingo(Contact Form 7、`fl
 * `hubert_acf_show_admin` - ACF 管理メニューの表示判定
 
 == Changelog ==
+
+= 1.7.4 =
+* 「最近のお問い合わせ」のスパム件数を視覚的に強調
+  - スパムが1件以上ある時のみ「スパム (N)」リンクを Hubert ブランド色(#a06d1f)+セミボールドで表示し、溜まっていることに気づきやすく
+  - 0件の時は従来どおり通常のリンク表示
 
 = 1.7.3 =
 * 自己更新(GitHub Releases 経由)の動作検証リリース。機能変更なし。動作確認バージョンを WordPress 7.1 に更新
