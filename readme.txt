@@ -4,7 +4,7 @@ Tags: dashboard, admin, wpml, acf, custom-post-type
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.7.4
+Stable tag: 1.8.0
 License: Proprietary
 
 Hubert 製 WordPress サイト用、管理画面ダッシュボードの統一化プラグイン。
@@ -47,6 +47,14 @@ MW WP Form の問い合わせデータ(`mwf_*`)と Flamingo(Contact Form 7、`fl
 * `hubert_acf_show_admin` - ACF 管理メニューの表示判定
 
 == Changelog ==
+
+= 1.8.0 =
+* 「最近のお問い合わせ」に受信/スパムの推移グラフ(過去14日)を追加
+  - 受信(publish/private)とスパム(flamingo-spam)を日別に集計し、折れ線2本で表示。各点にカーソルを合わせると件数を確認できる
+  - 外部ライブラリ・JS 不使用(PHP がインライン SVG を生成)。系列色は受信=紺 / スパム=水色
+  - 集計は受信日ベース・現在の分類(受信後にスパム判定した項目はスパム系列の受信日にカウント)
+  - Flamingo 利用サイトのみ表示。設定でON/OFF可(既定ON)
+* スパム件数リンクの強調表示(1.7.4 で追加した茶色+セミボールド)を廃止し、通常のリンク表示に戻した(推移グラフで傾向を確認できるため)
 
 = 1.7.4 =
 * 「最近のお問い合わせ」のスパム件数を視覚的に強調
