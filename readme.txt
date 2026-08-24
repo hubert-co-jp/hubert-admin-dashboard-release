@@ -4,7 +4,7 @@ Tags: dashboard, admin, wpml, acf, custom-post-type
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.8.0
+Stable tag: 1.9.0
 License: Proprietary
 
 Hubert 製 WordPress サイト用、管理画面ダッシュボードの統一化プラグイン。
@@ -47,6 +47,14 @@ MW WP Form の問い合わせデータ(`mwf_*`)と Flamingo(Contact Form 7、`fl
 * `hubert_acf_show_admin` - ACF 管理メニューの表示判定
 
 == Changelog ==
+
+= 1.9.0 =
+* 推移グラフの集計期間セレクタを追加
+  - サマリー行(受信トレイ | スパム)の右端にプルダウンを設置し、過去7日/14日/30日/90日を切り替え可能に
+  - 選択はユーザーごとに記憶され、次回以降も維持される(nonce 検証つき)
+* グラフの軸ラベルを読みやすく改善
+  - 日付・件数の文字サイズを拡大(実表示約7px→約11px)、日付表記を「8/24」形式に変更
+  - 期間に応じてラベルを自動間引き(最大7個程度)、長期間表示時はデータ点を小さく調整
 
 = 1.8.0 =
 * 「最近のお問い合わせ」に受信/スパムの推移グラフ(過去14日)を追加
