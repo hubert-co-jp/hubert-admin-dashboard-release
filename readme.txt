@@ -4,7 +4,7 @@ Tags: dashboard, admin, wpml, acf, custom-post-type
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.9.3
+Stable tag: 1.9.4
 License: Proprietary
 
 Hubert 製 WordPress サイト用、管理画面ダッシュボードの統一化プラグイン。
@@ -47,6 +47,11 @@ MW WP Form の問い合わせデータ(`mwf_*`)と Flamingo(Contact Form 7、`fl
 * `hubert_acf_show_admin` - ACF 管理メニューの表示判定
 
 == Changelog ==
+
+= 1.9.4 =
+* 推移グラフのツールチップを WP Mail SMTP 同等の見た目・配置に調整
+  - ダークスタイル(黒地・白文字・角丸)に変更、系列マーカーを黒地でも視認できる色付きスクエアに
+  - 表示位置をポイントの真横に変更(マウスに近い系列のポイント基準・右横、右端では左横に自動反転・上下はポイント中心揃え)
 
 = 1.9.3 =
 * 推移グラフのホバー挙動を WP Mail SMTP 同等のポイント基準に改善
