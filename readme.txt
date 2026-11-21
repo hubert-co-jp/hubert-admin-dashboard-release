@@ -4,10 +4,10 @@ Tags: dashboard, admin, wpml, acf, custom-post-type
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.11.0
+Stable tag: 1.12.0
 License: Proprietary
 
-WordPress サイトの管理画面ダッシュボードを統一化するプラグイン。概要の件数表示(WPML 言語別・お問い合わせはフォーム別)、最近のコンテンツ更新、最近のお問い合わせ(MW WP Form / Flamingo・推移グラフ)、標準ウィジェット非表示、ACF メニュー非表示、コメント無効化。
+WordPress サイトの管理画面ダッシュボードを統一化するプラグイン。概要の件数表示(WPML 言語別・お問い合わせはフォーム別)、最近のコンテンツ更新、最近のお問い合わせ(MW WP Form / Flamingo・推移グラフ)、標準ウィジェット非表示、ACF メニュー非表示、コメント無効化、管理画面・ログイン画面のファビコン表示。
 
 == 機能 ==
 
@@ -30,6 +30,9 @@ ACF Field Group の編集メニューを administrator 権限を持つユーザ�
 = 5. 最近のお問い合わせウィジェット =
 MW WP Form の問い合わせデータ(`mwf_*`)と Flamingo(Contact Form 7、`flamingo_inbound`)の受信メッセージを横断して新着順に表示する専用ウィジェット。対象は自動検出し、`hubert_dashboard_inquiry_post_types` フィルターで拡張可能。個人情報を含むため、対象の投稿タイプごとに編集権限を持つユーザーにのみ表示(Flamingo は管理者、MW WP Form は編集者以上。元プラグインの権限と同じ)。設定「Flamingo の閲覧権限」で「編集者以上」を選ぶと、Flamingo の受信メッセージを編集者にも開放でき、ウィジェットも追従する。設定で表示ON/OFFと件数を指定でき、対象データが無い場合は自動的に非表示。
 
+= 6. 管理画面・ログイン画面のファビコン =
+公開ページと同じファビコンを、管理画面とログイン画面のブラウザーのタブにも表示する。テーマ(子テーマ → 親テーマの順)の決まった置き場(img/common/・img/favicon/・common/img/・テーマ直下・img/・images/・assets/img/・assets/images/)から favicon-32x32.png → favicon.png → favicon.ico → favicon.svg → favicon-16x16.png の順に探し、最初に見つかったものを使う。設定は不要。WordPress のサイトアイコンを設定済みのサイトでは何もしない(WordPress が自分で表示するため)。見つからなければ何も出さない。公開ページには出さない。候補に合わないサイトは `hubert_dash_admin_favicon_url` フィルターで URL を指定、または '' を返して停止できる。
+
 == 動作要件 ==
 
 * WordPress 6.0 以上
@@ -45,8 +48,13 @@ MW WP Form の問い合わせデータ(`mwf_*`)と Flamingo(Contact Form 7、`fl
 * `hubert_activity_cpts` - アクティビティ対象 CPT
 * `hubert_dash_hidden_widgets` - 非表示にする標準ウィジェット
 * `hubert_acf_show_admin` - ACF 管理メニューの表示判定
+* `hubert_dash_admin_favicon_url` - 管理画面・ログイン画面に出すファビコンの URL('' で停止)
 
 == Changelog ==
+
+= 1.12.0 =
+* 追加: 管理画面とログイン画面に、公開ページと同じテーマのファビコンを表示。テーマ(子テーマ → 親テーマ)の決まった置き場から favicon-32x32.png / favicon.png / favicon.ico / favicon.svg / favicon-16x16.png を探して使う(サイトごとの設定は不要)。ファイルの更新日時を版として付け、差し替え時に古いアイコンが残らないようにした。WordPress のサイトアイコンを設定済みのサイトと、テーマにファビコンが無いサイトでは何も出さない。公開ページの出力は変えない
+* 追加: フィルター `hubert_dash_admin_favicon_url`(候補に合わないサイトで URL を指定する・'' を返して止める)
 
 = 1.11.0 =
 * 追加: 設定画面に「Flamingo の閲覧権限」(管理者のみ / 編集者以上)を追加。「編集者以上」を選ぶと Flamingo の受信メッセージ(閲覧・スパム判定・削除)を編集者にも開放する(Flamingo の flamingo_map_meta_cap フィルターで受信メッセージ系の権限を edit_pages に写像。アドレス帳と設定は管理者のまま)。既定は Flamingo 標準の管理者のみで、サイトごとのオプトイン。ダッシュボードの各ウィジェットはこの権限に自動で追従する
